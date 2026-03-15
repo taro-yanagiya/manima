@@ -1,0 +1,43 @@
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Build artifacts
+DerivedData/
+build/
+*.app
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Dependencies
+Carthage/Build/
+Pods/
+
+# Code coverage
+*.gcno
+*.gcda
+*.profraw
+*.profdata
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Misc
+*.moved-aside
+*.hmap
+*.ipa
