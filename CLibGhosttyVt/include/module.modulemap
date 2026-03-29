@@ -1,0 +1,5 @@
+module CLibGhosttyVt [system] {
+    header "shim.h"
+    link "ghostty-vt"
+    export *
+}
