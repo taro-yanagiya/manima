@@ -7,9 +7,27 @@ let package = Package(
         .macOS(.v13)
     ],
     targets: [
+        .target(
+            name: "CLibGhosttyVt",
+            path: "CLibGhosttyVt",
+            sources: ["stub.c"],
+            publicHeadersPath: "include",
+            linkerSettings: [
+                .unsafeFlags(
+                    [
+                        "-LCLibGhosttyVt/lib",
+                        "-lghostty-vt",
+                        "-Xlinker", "-rpath", "-Xlinker",
+                        "@executable_path/../../../CLibGhosttyVt/lib"
+                    ],
+                    .when(platforms: [.macOS])
+                )
+            ]
+        ),
         .executableTarget(
             name: "manima",
-            path: "manima"
+            dependencies: ["CLibGhosttyVt"],
+            path: "macos"
         )
     ]
 )

@@ -1,25 +1,12 @@
 # manima
 
-macOS 向け SwiftUI アプリ。
+macOS 13+ / SwiftUI。Swift ソースは **`macos/`** のみ。
 
-## アプリの起動
-
-### ターミナル
-
-リポジトリのルート（`Package.swift` があるディレクトリ）で:
+`ghostty/` で `zig build lib-vt` し、次を実行してから `swift build` する。
 
 ```bash
+./Scripts/build-libghostty-vt.sh   # CLibGhosttyVt/lib と include/ghostty/ を生成
 swift run manima
 ```
 
-リリースビルド:
-
-```bash
-swift run -c release manima
-```
-
-## 要件
-
-- macOS 13 以上（`Package.swift` の `platforms` に準拠）
-- Xcode / Swift 5.9 以上のツールチェーン
-
+要件: Xcode（Swift 5.9+）、Zig 0.15.x、リポジトリ直下の Ghostty ソース `ghostty/`。
